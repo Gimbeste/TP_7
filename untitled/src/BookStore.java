@@ -14,7 +14,7 @@ public class BookStore {
     {
         for(Book b : books)
         {
-            if(b.getTitle() == name)
+            if(b.getTitle().equals(name))
                 return b;
         }
         return null;
