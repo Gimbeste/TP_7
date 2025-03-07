@@ -1,4 +1,4 @@
-public interface UserActions {
+public interface AdminActions {
     void borrowBook(String bookTitle);
     void returnBook(String bookTitle);
     void reviewBook(String bookTitle, String review);

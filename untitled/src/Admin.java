@@ -1,4 +1,4 @@
-public class Admin implements UserActions {
+public class Admin implements AdminActions {
     @Override
     public void borrowBook(String bookTitle) {
 // Not applicable for Admin, violates ISP
