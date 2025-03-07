@@ -1,5 +1,7 @@
+import Books.*;
+
 public interface CustomerActions {
-    void borrowBook(String bookTitle);
-    void returnBook(String bookTitle);
-    void reviewBook(String bookTitle, String review);
+    void borrowBook(Book book);
+    void returnBook(Book book);
+    void reviewBook(Book book, String review);
 }

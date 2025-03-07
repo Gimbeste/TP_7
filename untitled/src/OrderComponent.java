@@ -1,8 +1,16 @@
+import Books.*;
+
 public class OrderComponent {
-    public void processOrder(String bookTitle, String userEmail) {
-        System.out.println("Processing order for " + bookTitle);
-// Assume this logic processes an order and notifies the user
-        EmailSender e = new EmailSender();
-        e.sendNotification(userEmail, "Your order for " + bookTitle + " has been processed.");
+    private NotificationSender sender;
+
+    public OrderComponent(NotificationSender sender)
+    {
+        this.sender = sender;
+    }
+
+    public void processOrder(Book book, String userEmail) {
+        System.out.println("Processing order for " + book.getTitle());
+        // Assume this logic processes an order and notifies the user
+        sender.sendNotification(userEmail, "Your order for " + book.getTitle() + " has been processed.");
     }
 }

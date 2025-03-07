@@ -1,24 +1,24 @@
+import Books.*;
+
 public class Admin implements AdminActions {
-    @Override
-    public void borrowBook(String bookTitle) {
-// Not applicable for Admin, violates ISP
+    BookStore store;
+    public Admin(BookStore store)
+    {
+        this.store = store;
     }
-    @Override
-    public void returnBook(String bookTitle) {
-// Not applicable for Admin, violates ISP
-    }
-    @Override
-    public void reviewBook(String bookTitle, String review) {
-        System.out.println("Admin reviews a book: " + bookTitle + " with review: " + review);
+
+    public void reviewBook(String title, String review) {
+        System.out.println("Admin reviews a book: " + title + " with review: " + review);
     }
     // AdminSpecificActions implementations
-    @Override
-    public void addBookToStore(String title, String type, double price) {
-        System.out.println("Adding book to store: " + title + ", Type: " + type + ", Price: " + price);// Logic for adding a book to the inventory
+
+    public void addBookToStore(Book book) {
+        System.out.println("Adding book to store: " + book.getTitle() + ", Type: " + book.getType() + ", Price: " + book.getPrice());// Logic for adding a book to the inventory
+        store.addBook(book);
     }
-    @Override
-    public void removeBookFromStore(String title) {
-        System.out.println("Removing book from store: " + title);
-// Logic for removing a book from the inventory
+
+    public void removeBookFromStore(Book book) {
+        System.out.println("Removing book from store: " + book.getTitle());
+        // Logic for removing a book from the inventory
     }
 }
